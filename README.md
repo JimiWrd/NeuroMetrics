@@ -8,9 +8,9 @@ It is designed to fit in with the NeuroFit platform, but is application-agnostic
 
 ## 🚀 Features
 
-- ⚖️ **BMI Calculation**  
-- 💨 **VO₂ Max Estimation**
-- 🔬 **Extensible metric API** for health-related calculations  
+- 🔬 **Extensible metric API** for health-related calculations:
+  - ⚖️ **BMI Calculation**
+  - 💨 **VO₂ Max Estimation**
 - 🧪 **Spock-powered unit tests** for clean BDD-style testing  
 - 🧱 Built with **Micronaut** (lightweight, fast-starting, DI-powered)
 
@@ -114,7 +114,7 @@ src/
 * [ ] Basal Metabolic Rate (BMR)
 * [ ] Total Daily Energy Expenditure (TDEE)
 * [ ] Body Fat Percentage (BFP)
-* [ ] MAx Heart Rate (MHR)
+* [ ] Max Heart Rate (MHR)
 * [ ] Waist-to-Height Ratio (WhtR)
 * [ ] RESTful error handling
 * [ ] OpenAPI (Swagger) integration
