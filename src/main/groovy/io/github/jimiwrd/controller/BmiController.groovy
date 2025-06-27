@@ -19,4 +19,9 @@ class BmiController {
     BmiResult calculateBmiMetric(@QueryValue double weight, @QueryValue double height) {
         return bmiService.calculateBmiMetric(weight, height)
     }
+
+    @Get("/imperial")
+    BmiResult calculateBmiImperial(@QueryValue double weight, @QueryValue double height) {
+        return bmiService.calculateBmiImperial(weight, height)
+    }
 }

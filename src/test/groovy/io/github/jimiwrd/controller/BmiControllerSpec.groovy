@@ -14,7 +14,7 @@ class BmiControllerSpec extends Specification {
     @Client("/")
     HttpClient client
 
-    def "should return BMI and category from bmi endpoint"() {
+    def "should return BMI and category from bmi metric endpoint"() {
         when:
         def response = client.toBlocking().retrieve(
                 "/bmi/metric?weight=70&height=1.75", BmiResult
@@ -22,6 +22,17 @@ class BmiControllerSpec extends Specification {
 
         then:
         response.bmi == 22.86
+        response.category == BmiResult.Category.NORMAL
+    }
+
+    def "should return BMI and category from bmi imperial endpoint"() {
+        when:
+        def response = client.toBlocking().retrieve(
+                "/bmi/imperial?weight=154&height=68", BmiResult
+        )
+
+        then:
+        response.bmi == 23.41
         response.category == BmiResult.Category.NORMAL
     }
 }

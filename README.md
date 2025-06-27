@@ -49,10 +49,10 @@ The app will start on `http://localhost:8080`
 
 ## 📡 Example Endpoints
 
-### ➤ BMI Calculator
+### ➤ BMI Metric Calculator
 
 ```
-GET /bmi?units=metric&weight=70&height=1.75
+GET /bmi/metric?units=metric&weight=70&height=1.75
 ```
 
 **Response**
@@ -60,6 +60,21 @@ GET /bmi?units=metric&weight=70&height=1.75
 ```json
 {
   "bmi": 22.86,
+  "category": "Normal"
+}
+```
+
+### ➤ BMI Imperial Calculator
+
+```
+GET /bmi/imperial?&weight=11&height=5.9
+```
+
+**Response**
+
+```json
+{
+  "bmi": 22.4,
   "category": "Normal"
 }
 ```
