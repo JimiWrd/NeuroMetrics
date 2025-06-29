@@ -21,7 +21,7 @@ class BmiControllerSpec extends Specification {
         )
 
         then:
-        response.bmi == 22.86
+        response.bmi == 22.86d
         response.category == BmiResult.Category.NORMAL
     }
 
@@ -32,7 +32,7 @@ class BmiControllerSpec extends Specification {
         )
 
         then:
-        response.bmi == 23.41
+        response.bmi == 23.41d
         response.category == BmiResult.Category.NORMAL
     }
 }
