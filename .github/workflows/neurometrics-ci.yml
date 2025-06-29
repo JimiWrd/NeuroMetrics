@@ -17,7 +17,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: services/neurometrics
+        working-directory: neurometrics
 
     steps:
       - uses: actions/checkout@v4
