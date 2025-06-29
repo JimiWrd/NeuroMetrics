@@ -2,11 +2,9 @@ name: NeuroMetrics build/test pipeline
 
 on:
   push:
-    paths:
-      - "NeuroMetrics/**"
+    branches: [ main ]
   pull_request:
-    paths:
-      - "NeuroMetrics/**"
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -14,10 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-
-    defaults:
-      run:
-        working-directory: NeuroMetrics
 
     steps:
       - uses: actions/checkout@v4
@@ -50,5 +44,3 @@ jobs:
 
       - name: Generate and submit dependency graph
         uses: gradle/actions/dependency-submission@v4
-        with:
-          build-root-directory: NeuroMetrics
