@@ -155,5 +155,3 @@ src/
 ## 📖 License
 
 MIT © [Jimi Ward](https://github.com/JimiWrd)
-
-```
