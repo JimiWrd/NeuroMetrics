@@ -18,12 +18,14 @@ It is designed to fit in with the NeuroFit platform, but is application-agnostic
 
 ## 📦 Tech Stack
 
-| Tool        | Role                             |
-|-------------|----------------------------------|
-| Groovy      | Main language                    |
-| Micronaut   | REST microservice framework      |
-| Spock       | Unit testing / specification     |
-| Gradle      | Build tool                       |
+| Tool      | Role                         |
+|-----------|------------------------------|
+| Groovy    | Main language                |
+| Micronaut | REST microservice framework  |
+| Spock     | Unit testing / specification |
+| Gradle    | Build tool                   |
+| Docker    | Containerisation             |  
+
 
 ---
 
@@ -34,6 +36,7 @@ It is designed to fit in with the NeuroFit platform, but is application-agnostic
 - Java 17+  
 - Gradle 7+  
 - Micronaut CLI *(optional but helpful)*
+- Docker (optional)
 
 ### Clone & Run
 
@@ -42,12 +45,19 @@ git clone https://github.com/JimiWrd/neurometrics.git
 cd neurometrics
 ./gradlew run
 ````
+### (Optional) Docker
+
+```bash
+docker compose up --build -d #first time to build app
+
+docker compose up -d #can then run as normal
+```
 
 The app will start on `http://localhost:8080`
 
 ---
 
-## 📡 Example Endpoints
+## 📡 Current Endpoints
 
 ### ➤ BMI Metric Calculator
 
@@ -118,7 +128,10 @@ src/
 │   └── model
 │
 └── test/groovy/io/github/jimiwrd/neurometrics/       
-    └── unit
+    ├── controller
+    ├── service        
+    └── model
+    
 ```
 
 ---
@@ -133,8 +146,9 @@ src/
 * [ ] Waist-to-Height Ratio (WhtR)
 * [ ] RESTful error handling
 * [ ] OpenAPI (Swagger) integration
-* [ ] Docker support
-* [ ] CI/CD pipeline
+* [x] Docker support
+* [x] CI/CD pipeline
+* [ ] Migrate datasets to DB i.e. VO₂ Max lookup tables
 
 ---
 
