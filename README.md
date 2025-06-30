@@ -144,7 +144,7 @@ src/
 * [ ] Body Fat Percentage (BFP)
 * [ ] Max Heart Rate (MHR)
 * [ ] Waist-to-Height Ratio (WhtR)
-* [ ] RESTful error handling
+* [x] RESTful error handling
 * [ ] OpenAPI (Swagger) integration
 * [x] Docker support
 * [x] CI/CD pipeline
