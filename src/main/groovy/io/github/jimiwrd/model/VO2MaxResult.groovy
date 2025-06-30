@@ -4,12 +4,10 @@ import groovy.transform.builder.Builder
 import io.micronaut.serde.annotation.Serdeable
 
 @Builder
-@Serdeable.Deserializable
-@Serdeable.Serializable
+@Serdeable
 class VO2MaxResult {
-    double vo2Max;
-
-    Category category;
+    double vo2Max
+    Category category
 
     enum Category {
         POOR,
@@ -20,6 +18,8 @@ class VO2MaxResult {
         EXCELLENT,
         UNDEFINED
     }
+
+    // TODO: Abstract the Cooper table into a DB and use a query to lookup data
 
     static def getCategory(double vo2Max, int age) {
         String ageRange = VO2_MAX_CATEGORIES.keySet().find { range ->

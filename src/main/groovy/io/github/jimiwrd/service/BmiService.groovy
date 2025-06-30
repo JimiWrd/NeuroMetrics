@@ -1,5 +1,6 @@
 package io.github.jimiwrd.service
 
+import io.github.jimiwrd.error.BadRequestException
 import io.github.jimiwrd.model.BmiResult
 import jakarta.inject.Singleton
 
@@ -7,12 +8,10 @@ import jakarta.inject.Singleton
 class BmiService {
 
     def calculateBmiMetric(double weight, double height) {
-        if (weight < 0 || height < 0) {
-            return BmiResult.builder()
-                        .bmi(0)
-                        .category(BmiResult.Category.UNDEFINED)
-                        .build()
+        if (weight <= 0 || height <= 0) {
+            throw new BadRequestException("Invalid parameters given, Height and Weight must be > 0")
         }
+
         double bmi = (weight / (height * height) * 100).round() / 100
         return BmiResult.builder()
                 .bmi(bmi)
@@ -21,11 +20,8 @@ class BmiService {
     }
 
     def calculateBmiImperial(double weight, double height) {
-        if (weight < 0 || height < 0) {
-            return BmiResult.builder()
-                    .bmi(0)
-                    .category(BmiResult.getCategory(0))
-                    .build()
+        if (weight <= 0 || height <= 0) {
+            throw new BadRequestException("Invalid parameters given, Height and Weight must be > 0")
         }
         double bmi = ((weight / (height * height)) * 703 * 100).round() / 100
         return BmiResult.builder()
