@@ -25,18 +25,4 @@ class VO2MaxServiceSpec extends Specification{
         85 | 54  || 30.6           || VO2MaxResult.Category.FAIR
         65 | 62  || 38.8           || VO2MaxResult.Category.GOOD
     }
-
-    def "should take invalid inputs, handle as 0, return category UNDEFINED" () {
-        when:
-        def result = vo2MaxService.calculateVO2Max(hr, age)
-
-        then:
-        result.vo2Max == expectedVO2Max
-        result.category == expectedCategory
-
-        where:
-        hr | age || expectedVO2Max || expectedCategory
-        -1 | 55  || 0              || VO2MaxResult.Category.UNDEFINED
-        60 | -1  || 0              || VO2MaxResult.Category.UNDEFINED
-    }
 }

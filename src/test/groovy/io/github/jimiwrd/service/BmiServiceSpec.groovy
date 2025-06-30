@@ -40,18 +40,4 @@ class BmiServiceSpec extends Specification {
         265    | 65     || 44.09d      | BmiResult.Category.OBESE
         99     | 69     || 14.62d      | BmiResult.Category.UNDERWEIGHT
     }
-
-    def "should take negative inputs and handle it as 0, return category UNDEFINED"() {
-        when:
-        def result = bmiService.calculateBmiMetric(weight, height)
-
-        then:
-        result.bmi == expectedBmi
-        result.category == expectedCategory
-
-        where:
-        weight | height || expectedBmi | expectedCategory
-        70     | -1.75  || 0d           | BmiResult.Category.UNDEFINED
-        -70    | 1.75   || 0d           | BmiResult.Category.UNDEFINED
-    }
 }

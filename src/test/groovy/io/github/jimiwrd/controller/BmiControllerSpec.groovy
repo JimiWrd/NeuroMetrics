@@ -1,6 +1,6 @@
 package io.github.jimiwrd.controller
 
-import io.github.jimiwrd.error.BadRequestException
+
 import io.github.jimiwrd.error.ErrorCode
 import io.github.jimiwrd.error.ErrorResponse
 import io.github.jimiwrd.model.BmiResult

@@ -2,7 +2,6 @@ package io.github.jimiwrd.controller
 
 import io.github.jimiwrd.error.ErrorCode
 import io.github.jimiwrd.error.ErrorResponse
-import io.github.jimiwrd.model.BmiResult
 import io.github.jimiwrd.model.VO2MaxResult
 import io.micronaut.http.HttpStatus
 import io.micronaut.http.client.HttpClient
@@ -33,7 +32,6 @@ class VO2MaxControllerSpec extends Specification {
         hr | age || expectedVO2Max || expectedCategory
         60 | 52  || 43.8           || VO2MaxResult.Category.EXCELLENT
         70 | 57  || 36.7           || VO2MaxResult.Category.ABOVE_AVERAGE
-        -1 | 55  || 0              || VO2MaxResult.Category.UNDEFINED
     }
 
     def "should return ErrorResponse when HR or Age <= 0" () {
