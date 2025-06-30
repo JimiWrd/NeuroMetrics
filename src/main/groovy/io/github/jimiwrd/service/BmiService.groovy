@@ -10,7 +10,7 @@ class BmiService {
         if (weight < 0 || height < 0) {
             return BmiResult.builder()
                         .bmi(0)
-                        .category(BmiResult.getCategory(0))
+                        .category(BmiResult.Category.UNDEFINED)
                         .build()
         }
         double bmi = (weight / (height * height) * 100).round() / 100

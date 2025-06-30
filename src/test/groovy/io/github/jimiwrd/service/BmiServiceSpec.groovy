@@ -7,7 +7,7 @@ class BmiServiceSpec extends Specification {
 
     def bmiService = new BmiService()
 
-    def "should calculate correct BMI and return category as String when metric"() {
+    def "should calculate correct BMI and return category when metric"() {
         when:
         def result = bmiService.calculateBmiMetric(weight, height)
 
@@ -24,7 +24,7 @@ class BmiServiceSpec extends Specification {
         45     | 1.75   || 14.69d       | BmiResult.Category.UNDERWEIGHT
     }
 
-    def "should calculate correct BMI and return category as String when imperial"() {
+    def "should calculate correct BMI and return category when imperial"() {
         when:
         def result = bmiService.calculateBmiImperial(weight, height)
 
