@@ -107,6 +107,32 @@ GET /vo2max?hr=160&age=30
 ```
 
 ---
+### ➤ Basal Metabolic Rate (BMR) Calculator
+
+n.b. Male and female calculations differ slightly so there is an endpoint for both male and female. The stat returned is calculated with the Mifflin-St Jeor equation.
+
+```
+GET /bmr/female?weight=60&height=165&age=30
+
+GET /bmr/male?weight=70&height=175&age=30
+```
+
+**Response**
+
+```json
+{
+  "bmr": 1320,
+  "gender": "FEMALE"
+}
+```
+```json
+{
+  "bmr": 1649,
+  "gender": "MALE"
+}
+```
+
+---
 
 ## 🧪 Testing
 
@@ -139,7 +165,7 @@ src/
 ## 🧱 Planned Features
 
 * [ ] Heart Rate Zone calculation
-* [ ] Basal Metabolic Rate (BMR)
+* [x] Basal Metabolic Rate (BMR)
 * [ ] Total Daily Energy Expenditure (TDEE)
 * [ ] Body Fat Percentage (BFP)
 * [ ] Max Heart Rate (MHR)
