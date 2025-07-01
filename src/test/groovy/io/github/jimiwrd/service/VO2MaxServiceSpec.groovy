@@ -21,8 +21,8 @@ class VO2MaxServiceSpec extends Specification{
         60 | 52  || 43.8           || VO2MaxResult.Category.EXCELLENT
         70 | 57  || 36.7           || VO2MaxResult.Category.ABOVE_AVERAGE
         75 | 59  || 34.0           || VO2MaxResult.Category.AVERAGE
-        80 | 51  || 32.8           || VO2MaxResult.Category.AVERAGE
+        80 | 51  || 33.0           || VO2MaxResult.Category.AVERAGE
         85 | 54  || 30.6           || VO2MaxResult.Category.FAIR
-        65 | 62  || 38.8           || VO2MaxResult.Category.GOOD
+        65 | 62  || 38.7           || VO2MaxResult.Category.GOOD
     }
 }

@@ -4,9 +4,6 @@ import io.github.jimiwrd.error.BadRequestException
 import io.github.jimiwrd.model.VO2MaxResult
 import jakarta.inject.Singleton
 
-import java.math.RoundingMode
-
-
 @Singleton
 class VO2MaxService {
 
@@ -15,13 +12,15 @@ class VO2MaxService {
             throw new BadRequestException("Invalid parameters given, HR and Age must be > 0")
         }
 
-        def maxHr = (208 - (age * 0.7d)).round()
+        def maxHr = 208 - (age * 0.7d)
 
-        def vo2Max = new BigDecimal((maxHr / hr) * 15.3d).setScale(1, RoundingMode.DOWN).doubleValue()
+        def vo2Max = (maxHr / hr) * 15.3d
+
+        def vo2MaxRounded = vo2Max.round(1)
 
         return VO2MaxResult.builder()
-                .vo2Max(vo2Max)
-                .category(VO2MaxResult.getCategory(vo2Max, age))
+                .vo2Max(vo2MaxRounded)
+                .category(VO2MaxResult.getCategory(vo2MaxRounded, age))
                 .build()
     }
 }

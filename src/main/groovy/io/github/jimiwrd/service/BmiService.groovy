@@ -12,10 +12,13 @@ class BmiService {
             throw new BadRequestException("Invalid parameters given, Height and Weight must be > 0")
         }
 
-        double bmi = (weight / (height * height) * 100).round() / 100
+        double bmi = weight / (height * height)
+
+        def bmiRounded = bmi.round(2)
+
         return BmiResult.builder()
-                .bmi(bmi)
-                .category(BmiResult.getCategory(bmi))
+                .bmi(bmiRounded)
+                .category(BmiResult.getCategory(bmiRounded))
                 .build()
     }
 
